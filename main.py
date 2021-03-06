@@ -15,4 +15,4 @@ for x in range(60):
   print(x)
   setTemperature(x)
   setHumidity(x+5)
-  time.sleep(1)
+  sleep(1)
