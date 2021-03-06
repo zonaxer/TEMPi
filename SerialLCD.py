@@ -71,8 +71,8 @@ class SerialLCD:
   def setCursor(self, column, row):
     self.write(SLCD_CONTROL_HEADER)
     self.write(SLCD_CURSOR_HEADER)
-    self.write(serial.to_bytes(str(column)))
-    self.write(serial.to_bytes(str(row)))
+    self.write(serial.to_bytes(str(column).encode()))
+    self.write(serial.to_bytes(str(row).encode()))
 
   # Switch the display off without clearing RAM
   def noDisplay(self):
@@ -155,4 +155,4 @@ class SerialLCD:
   # Print Commands
   def printText(self, text):
     self.write(SLCD_CHAR_HEADER)
-    self.write(str(text))
+    self.write(text.encode())
